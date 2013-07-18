@@ -1,0 +1,32 @@
+{
+  "name": "node-webapp-seed",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/supervisor/lib/cli-wrapper.js --extensions 'node|js|coffee' --ignore app/static/ app/app.coffee",
+    "test": "node_modules/mocha/bin/mocha test/specs/**/*.spec.coffee --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaketrent/node-webapp-seed.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "express": "~3.2.6",
+    "jade": "~0.28.2",
+    "coffee-script": "~1.6.2",
+    "stylus": "~0.32.1",
+    "nib": "~0.9.1",
+    "bower": "~0.8.6",
+    "underscore": "~1.4.4",
+    "debug": "~0.7.2",
+    "mincer": "~0.4.6"
+  },
+  "devDependencies": {
+    "supervisor": "~0.5.2",
+    "mocha": "~1.11.0",
+    "chai": "~1.7.1"
+  }
+}
