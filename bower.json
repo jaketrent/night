@@ -1,0 +1,15 @@
+{
+  "name": "night",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/static/js/components"
+  ],
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "handlebars": "~1.1.2",
+    "ember": "~1.2.0",
+    "ember-data": "~1.0.0-beta.4"
+  }
+}
