@@ -2,12 +2,20 @@ extends layouts/app
 
 block content
   script(type='text/x-handlebars')
-    <h1>This is the night we've waited for!</h1>
-
     {{ outlet }}
 
   script(type='text/x-handlebars', data-template-name="nights")
-    <h2>Choose your subject</h2>
     {{#each}}
-    <p>{{ subject }}</p>
+    {{#night-card subject=subject}}{{/night-card}}
     {{/each}}
+
+  script(type='text/x-handlebars', data-template-name='components/night-card')
+    <div class="card" {{bindAttr class="isFacedown:is-facedown:is-faceup"}} {{action "toggleFacedown"}}>
+    <div class="card-inner">
+    <div class="card-side card-front">
+    {{subject}}
+    </div>
+    <div class="card-side card-back"></div>
+    </div>
+    </div>
+
