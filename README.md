@@ -1,13 +1,4 @@
-node-webapp-seed
+This is the Night! (We've waited for)
 ================
 
-## Features
-- Express/connect
-- Jade templates
-- All CoffeeScript
-- Stylus preproc
-- Routes file
-- Bower setup
-- Assets w/ Mincer
-- Server reload w/ Supervisor
-- Mocha/chai test env
+Choose your activities for family night.

@@ -5,3 +5,9 @@ block content
     <h1>This is the night we've waited for!</h1>
 
     {{ outlet }}
+
+  script(type='text/x-handlebars', data-template-name="nights")
+    <h2>Choose your subject</h2>
+    {{#each}}
+    <p>{{ subject }}</p>
+    {{/each}}
