@@ -1,6 +1,7 @@
 $card-width = 200px
 $card-height = 200px
 $card-border-width = 20px
+$card-margin = 20px
 
 .card
   width: $card-width
@@ -9,6 +10,10 @@ $card-border-width = 20px
   perspective: 800px
   transform-origin: 50% 100%
   transition: all 400ms
+
+  &.is-on-table
+    position: absolute
+    top: $card-margin
 
   &.is-facedown .card-inner
     transform: rotateY(180deg)
@@ -31,6 +36,7 @@ $card-border-width = 20px
   height: 100%
   backface-visibility: hidden
   border-radius: 15px
+  overflow: hidden
 
 .card-front
   background: lightsteelblue
@@ -42,3 +48,7 @@ $card-border-width = 20px
 .card-back
   background: $gray-dark
   transform: rotateY(180deg)
+
+for i in (1..50)
+  .card.is-on-table:nth-of-type({i})
+    left: i * $card-width
