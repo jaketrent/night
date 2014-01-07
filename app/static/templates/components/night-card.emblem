@@ -1,0 +1,4 @@
+.card class=isFacedown:is-facedown:is-faceup click="toggleFacedown"
+  .card-inner
+    .card-side.card-front= subject
+    .card-side.card-back

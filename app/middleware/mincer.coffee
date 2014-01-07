@@ -1,13 +1,16 @@
 Mincer = require 'mincer'
+emblemEngine = require 'mincer-emblem-engine'
 nib = require 'nib'
 
-Mincer.StylusEngine.registerConfigurator (style) ->
+Mincer.StylusEngine.configure (style) ->
   style.use nib()
 
 environment = new Mincer.Environment()
+emblemEngine.register environment
+environment.appendPath "#{__dirname}/../static"
 
-for path in ['css', 'js', 'templates']
-  fullPath = "#{__dirname}/../static/#{path}"
-  environment.appendPath fullPath
+Mincer.logger.use
+  log: (level, msg) ->
+    console.log "MINCER: #{level}: #{msg}"
 
 exports.server = Mincer.createServer environment
