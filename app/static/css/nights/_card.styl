@@ -3,6 +3,10 @@ $card-height = 200px
 $card-border-width = 20px
 $card-margin = 20px
 
+$card-width-highlighted = 600px
+$card-height-highlighted = 400px
+$card-z-index-highlighted = 100
+
 .card
   width: $card-width
   height: $card-height
@@ -18,6 +22,15 @@ $card-margin = 20px
   &.is-facedown .card-inner
     transform: rotateY(180deg)
 
+  &.is-highlighted
+    width: $card-width-highlighted
+    height: $card-height-highlighted
+    position: absolute
+    top: 100px
+    left: 50%
+    margin-left: -($card-width-highlighted / 2)
+    z-index: $card-z-index-highlighted
+
 .card-inner
   width: 100%
   height: 100%
@@ -25,7 +38,6 @@ $card-margin = 20px
   transform-style: preserve-3d
   transition: transform 1s
 
-  line-height: 260px
   color: $white
   font-size: 80px
 
@@ -38,12 +50,14 @@ $card-margin = 20px
   border-radius: 15px
   overflow: hidden
 
+  .card.is-highlighted &
+    box-shadow: 10px 15px 20px rgba($black, .4)
+
 .card-front
   background: lightsteelblue
   background-size: cover
   text-shadow: 1px 1px 0 rgba($gray-dark, .5)
   font-size: 20px
-  line-height: $card-height
 
 .card-back
   background: $gray-dark

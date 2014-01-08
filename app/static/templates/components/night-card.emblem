@@ -1,3 +1,5 @@
 .card-inner click="flip"
-  .card-side.card-front= subject
+  .card-side.card-front
+    span= night.subject
+    button click="detailsClick bubbles=false"  Details
   .card-side.card-back

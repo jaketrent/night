@@ -1,2 +1,3 @@
 each
-  night-card subject=subject
+  night-card night=this
+== outlet night-detail
