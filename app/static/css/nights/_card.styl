@@ -1,7 +1,6 @@
 $card-width = 200px
 $card-height = 200px
 $card-border-width = 20px
-$card-margin = 20px
 
 $card-width-highlighted = 600px
 $card-height-highlighted = 400px
@@ -17,7 +16,6 @@ $card-z-index-highlighted = 100
 
   &.is-on-table
     position: absolute
-    top: $card-margin
 
   &.is-facedown .card-inner
     transform: rotateY(180deg)
@@ -38,8 +36,6 @@ $card-z-index-highlighted = 100
   transform-style: preserve-3d
   transition: transform 1s
 
-  color: $white
-  font-size: 80px
 
 .card-side
   display: block
@@ -62,7 +58,3 @@ $card-z-index-highlighted = 100
 .card-back
   background: $gray-dark
   transform: rotateY(180deg)
-
-for i in (1..50)
-  .card.is-on-table:nth-of-type({i})
-    left: i * $card-width
