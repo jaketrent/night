@@ -4,7 +4,10 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "app/static/js/components"
+    "app/static/js/components",
+    "bower_components",
+    "test",
+    "tests"
   ],
   "dependencies": {
     "jquery": "~1.10.2",
@@ -12,5 +15,11 @@
     "ember": "~1.2.0",
     "ember-data": "~1.0.0-beta.4",
     "underscore": "~1.5.2"
-  }
+  },
+  "homepage": "https://github.com/jaketrent/night",
+  "authors": [
+    "jaketrent <trent.jake@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true
 }
