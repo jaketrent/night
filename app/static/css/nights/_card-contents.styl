@@ -16,23 +16,36 @@
     display: block
 
 .card-title
+  margin: 30px
   color: $white
   font-size: 30px
-  margin: 30px
+  text-shadow: 1px 1px 0 rgba($gray-dark, .5)
 
 .card-detail
   display: none
+  overflow: hidden
 
   .card.is-highlighted &
     display: block
 
 .card-detail-list
-  list-style: none
-  margin-left: 0
-  display: inline-block
+  display: block
+  float: left
   width: 33%
+  margin-left: 0
+  padding: 0 15px
+  list-style: none
+
+  &:nth-child(2)
+    padding: 0
 
 .card-detail-item
   display: block
   margin-bottom: 20px
+  font-size: 14px
+  text-align: left
+
+.card-detail-list-title
+  font-weight: bold
+
 

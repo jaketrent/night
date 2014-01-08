@@ -5,12 +5,15 @@
       button.card-btn click="highlight bubbles=false" Details
     .card-detail
       ul.card-detail-list
+        li.card-detail-item.card-detail-list-title Songs
         each night.songs
           li.card-detail-item= title
       ul.card-detail-list
+        li.card-detail-item.card-detail-list-title Scriptures
         each night.scriptures
           li.card-detail-item= reference
       ul.card-detail-list
+        li.card-detail-item.card-detail-list-title Activities
         each night.activities
           li.card-detail-item= description
   .card-side.card-back
