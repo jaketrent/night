@@ -1,17 +1,19 @@
 App.NightCardComponent = Ember.Component.extend
   classNames: ['card']
-  classNameBindings: ['isFacedown', 'isOnTable']
-
-  highlightAction: 'highlightNight'
+  classNameBindings: ['isFacedown', 'isOnTable', 'isHighlighted']
 
   actions:
     flip: ->
-      @toggleProperty 'isFacedown'
+      if @get 'isHighlighted'
+        @set 'isOnTable', true
+        @set 'isHighlighted', false
+        @set 'isFacedown', true
+      else
+        @toggleProperty 'isFacedown'
 
-    detailsClick: ->
-      console.log 'action for compo'
-      console.log @get 'night'
-      @sendAction 'highlightAction', @get 'night'
+    highlight: ->
+      @set 'isOnTable', false
+      @set 'isHighlighted', true
 
   didInsertElement: ->
     @set 'isFacedown', true

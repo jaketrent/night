@@ -1,1 +1,0 @@
-App.NightDetailController = Ember.ObjectController.extend()
