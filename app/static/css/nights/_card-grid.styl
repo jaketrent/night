@@ -33,5 +33,5 @@ for i in (1..50)
       left: $card-grid-margin + (col(i - 1) * $card-on-grid-margin) + card-horz-space(i - 1)
       top: $card-grid-margin + (row(i - 1) * $card-on-grid-margin) + card-vert-space(i - 1)
 
-    .card-back
+    .card-back, .card-front
       background: card-palette(i)
