@@ -4,7 +4,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "app/static/js/components",
+    "client/components",
     "bower_components",
     "test",
     "tests"
