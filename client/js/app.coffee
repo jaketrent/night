@@ -5,7 +5,7 @@
 #= require js/components/underscore/underscore.js
 
 #= require_self
-#= require_tree ./../templates
+#= require_tree ./../tmpl
 #= require_tree ./common
 #= require_tree ./nights
 

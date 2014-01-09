@@ -6,7 +6,8 @@ Mincer.StylusEngine.configure (style) ->
   style.use nib()
 
 environment = new Mincer.Environment()
-emblemEngine.register environment
+emblemEngine.register environment,
+  template_path: '/tmpl/'
 environment.appendPath "#{__dirname}/../../client"
 
 Mincer.logger.use
