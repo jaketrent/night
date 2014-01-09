@@ -32,5 +32,33 @@ App.Night.FIXTURES = [
     songs: [1, 3]
     scriptures: [1, 2, 3]
     activities: [1, 2]
+  },
+  {
+    id: 5
+    subject: 'Christmas Messages'
+    songs: [1, 3]
+    scriptures: [1, 2, 3]
+    activities: [1, 2]
+  },
+  {
+    id: 6
+    subject: 'Christmas Messages'
+    songs: [1, 3]
+    scriptures: [1, 2, 3]
+    activities: [1, 2]
+  },
+  {
+    id: 7
+    subject: 'Christmas Messages'
+    songs: [1, 3]
+    scriptures: [1, 2, 3]
+    activities: [1, 2]
+  },
+  {
+    id: 8
+    subject: 'Christmas Messages'
+    songs: [1, 3]
+    scriptures: [1, 2, 3]
+    activities: [1, 2]
   }
 ]

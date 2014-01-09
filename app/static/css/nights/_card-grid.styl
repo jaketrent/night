@@ -1,6 +1,8 @@
-$cards-per-row = 2
+$cards-per-row = 4
 $card-on-grid-margin = 20px
 $card-grid-margin = 100px
+
+$card-back-starting-color = #e33f3f
 
 card-horz-space(i)
   $card-width * col(i)
@@ -14,7 +16,22 @@ col(i)
 row(i)
   floor(i / $cards-per-row)
 
+card-color(i)
+  r = (20 * i) % 240
+  g = (40 * i) % 240
+  b = (60 * i) % 240
+  rgb(r, g, b)
+
+card-palette(i)
+  colors = #dd4848, #f9b616, #f9e616, #43e43f, #3fbbe4, #913fe4, #e43fbf
+  colors[i % length(colors)]
+
 for i in (1..50)
-  .card.is-on-table:nth-of-type({i})
-    left: $card-grid-margin + (col(i - 1) * $card-on-grid-margin) + card-horz-space(i - 1)
-    top: $card-grid-margin + (row(i - 1) * $card-on-grid-margin) + card-vert-space(i - 1)
+  .card:nth-of-type({i})
+
+    &.is-on-table
+      left: $card-grid-margin + (col(i - 1) * $card-on-grid-margin) + card-horz-space(i - 1)
+      top: $card-grid-margin + (row(i - 1) * $card-on-grid-margin) + card-vert-space(i - 1)
+
+    .card-back
+      background: card-palette(i)
