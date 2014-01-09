@@ -2,7 +2,7 @@ path = require 'path'
 
 module.exports = (config) ->
   isTest = process.env.NODE_ENV is 'test'
-  bowerPath = path.join 'app', 'static', 'js', 'components'
+  bowerPath = path.join 'server', 'static', 'js', 'components'
 
   console.log "bowerPath: #{bowerPath}"
 
@@ -20,8 +20,8 @@ module.exports = (config) ->
       path.join bowerPath, 'underscore/underscore.js'
 
       # source
-      'app/static/js/app.coffee'
-      'app/static/js/**/*.coffee'
+      'server/static/js/app.coffee'
+      'server/static/js/**/*.coffee'
 
       # test helpers
       'node_modules/chai/chai.js'

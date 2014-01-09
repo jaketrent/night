@@ -1,9 +1,9 @@
 {
   "name": "night",
   "version": "1.0.0",
-  "main": "app/app.coffee",
+  "main": "server/app.coffee",
   "scripts": {
-    "start": "node_modules/supervisor/lib/cli-wrapper.js --extensions 'node|js|coffee' --ignore app/static/ app/app.coffee",
+    "start": "node_modules/supervisor/lib/cli-wrapper.js --extensions 'node|js|coffee' --ignore server/static/ server/app.coffee",
     "test": "node_modules/karma/bin/karma start test/karma.conf.coffee",
     "test-browser": "node_modules/karma/bin/karma start test/karma.conf.coffee",
     "test-server": "node_modules/mocha/bin/mocha test/specs/**/*.spec.coffee --watch",
