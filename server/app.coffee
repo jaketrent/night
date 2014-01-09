@@ -16,7 +16,6 @@ app.configure ->
 
   app.use express.bodyParser()
 
-  app.use express.static path.join __dirname, 'static'
   app.use '/static', require('./middleware/mincer').server
   app.use app.router
 

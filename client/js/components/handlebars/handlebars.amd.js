@@ -28,7 +28,7 @@ THE SOFTWARE.
 define(
   'handlebars/safe-string',["exports"],
   function(__exports__) {
-    
+
     // Build out our basic SafeString type
     function SafeString(string) {
       this.string = string;
@@ -43,7 +43,7 @@ define(
 define(
   'handlebars/utils',["./safe-string","exports"],
   function(__dependency1__, __exports__) {
-    
+
     var SafeString = __dependency1__["default"];
 
     var escape = {
@@ -122,7 +122,7 @@ define(
 define(
   'handlebars/exception',["exports"],
   function(__exports__) {
-    
+
 
     var errorProps = ['description', 'fileName', 'lineNumber', 'message', 'name', 'number', 'stack'];
 
@@ -142,7 +142,7 @@ define(
 define(
   'handlebars/base',["./utils","./exception","exports"],
   function(__dependency1__, __dependency2__, __exports__) {
-    
+
     /*globals Exception, Utils */
     var Utils = __dependency1__;
     var Exception = __dependency2__["default"];
@@ -323,7 +323,7 @@ define(
 define(
   'handlebars/runtime',["./utils","./exception","./base","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __exports__) {
-    
+
     /*global Utils */
     var Utils = __dependency1__;
     var Exception = __dependency2__["default"];
@@ -470,7 +470,7 @@ define(
 define(
   'handlebars.runtime',["./handlebars/base","./handlebars/safe-string","./handlebars/exception","./handlebars/utils","./handlebars/runtime","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __exports__) {
-    
+
     var base = __dependency1__;
 
     // Each of these augment the Handlebars object. No need to setup here.
@@ -505,7 +505,7 @@ define(
 define(
   'handlebars/compiler/ast',["../exception","exports"],
   function(__dependency1__, __exports__) {
-    
+
     var Exception = __dependency1__["default"];
 
     function ProgramNode(statements, inverseStrip, inverse) {
@@ -657,7 +657,7 @@ define(
 define(
   'handlebars/compiler/parser',["exports"],
   function(__exports__) {
-    
+
     /* Jison generated parser */
     var handlebars = (function(){
     var parser = {trace: function trace() { },
@@ -669,9 +669,9 @@ define(
 
     var $0 = $$.length - 1;
     switch (yystate) {
-    case 1: return new yy.ProgramNode($$[$0-1]); 
+    case 1: return new yy.ProgramNode($$[$0-1]);
     break;
-    case 2: return new yy.ProgramNode([]); 
+    case 2: return new yy.ProgramNode([]);
     break;
     case 3:this.$ = new yy.ProgramNode([], $$[$0-1], $$[$0]);
     break;
@@ -687,7 +687,7 @@ define(
     break;
     case 9:this.$ = [$$[$0]];
     break;
-    case 10: $$[$0-1].push($$[$0]); this.$ = $$[$0-1]; 
+    case 10: $$[$0-1].push($$[$0]); this.$ = $$[$0-1];
     break;
     case 11:this.$ = new yy.BlockNode($$[$0-2], $$[$0-1].inverse, $$[$0-1], $$[$0]);
     break;
@@ -743,7 +743,7 @@ define(
     break;
     case 37:this.$ = new yy.IdNode($$[$0]);
     break;
-    case 38: $$[$0-2].push({part: $$[$0], separator: $$[$0-1]}); this.$ = $$[$0-2]; 
+    case 38: $$[$0-2].push({part: $$[$0], separator: $$[$0-1]}); this.$ = $$[$0-2];
     break;
     case 39:this.$ = [{part: $$[$0]}];
     break;
@@ -1065,7 +1065,7 @@ define(
                                          this.begin("mu");
                                        }
                                        if(yy_.yytext) return 14;
-                                     
+
     break;
     case 1:return 14;
     break;
@@ -1073,7 +1073,7 @@ define(
                                        if(yy_.yytext.slice(-1) !== "\\") this.popState();
                                        if(yy_.yytext.slice(-1) === "\\") strip(0,1);
                                        return 14;
-                                     
+
     break;
     case 3:strip(0,4); this.popState(); return 15;
     break;
@@ -1144,7 +1144,7 @@ define(
 define(
   'handlebars/compiler/base',["./parser","./ast","exports"],
   function(__dependency1__, __dependency2__, __exports__) {
-    
+
     var parser = __dependency1__["default"];
     var AST = __dependency2__;
 
@@ -1163,7 +1163,7 @@ define(
 define(
   'handlebars/compiler/javascript-compiler',["../base","exports"],
   function(__dependency1__, __exports__) {
-    
+
     var COMPILER_REVISION = __dependency1__.COMPILER_REVISION;
     var REVISION_CHANGES = __dependency1__.REVISION_CHANGES;
     var log = __dependency1__.log;
@@ -2057,7 +2057,7 @@ define(
 define(
   'handlebars/compiler/compiler',["../exception","./base","./javascript-compiler","./ast","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __exports__) {
-    
+
     var Exception = __dependency1__["default"];
     var parse = __dependency2__.parse;
     var JavaScriptCompiler = __dependency3__["default"];
@@ -2530,9 +2530,9 @@ define(
     __exports__.compile = compile;
   });
 define(
-  'handlebars',["./handlebars.runtime","./handlebars/compiler/ast","./handlebars/compiler/base","./handlebars/compiler/compiler","./handlebars/compiler/javascript-compiler","exports"],
+  'handlebars',["./handlebars.runtime.js","./handlebars/compiler/ast","./handlebars/compiler/base","./handlebars/compiler/compiler","./handlebars/compiler/javascript-compiler","exports"],
   function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __exports__) {
-    
+
     var Handlebars = __dependency1__["default"];
 
     // Compiler imports

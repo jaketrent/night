@@ -7,7 +7,7 @@ Mincer.StylusEngine.configure (style) ->
 
 environment = new Mincer.Environment()
 emblemEngine.register environment
-environment.appendPath "#{__dirname}/../static"
+environment.appendPath "#{__dirname}/../../client"
 
 Mincer.logger.use
   log: (level, msg) ->
