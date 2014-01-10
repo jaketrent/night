@@ -1,0 +1,1 @@
+App.AdminRoute = Ember.Route.extend Ember.SimpleAuth.AuthenticatedRouteMixin

@@ -26,7 +26,9 @@
     "underscore": "~1.4.4",
     "debug": "~0.7.2",
     "mincer": "~0.5.0",
-    "mincer-emblem-engine": "~0.1.6"
+    "mincer-emblem-engine": "~0.1.6",
+    "express-jwt": "~0.1.0",
+    "jsonwebtoken": "~0.1.0"
   },
   "devDependencies": {
     "supervisor": "~0.5.2",

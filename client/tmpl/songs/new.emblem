@@ -1,0 +1,7 @@
+h2 New Song
+
+form submit="add"
+  Ember.TextField valueBinding="number" placeholder="Number"
+  Ember.TextField valueBinding="title" placeholder="Title"
+
+  = input class="btn" type="submit" value="Add"

@@ -1,0 +1,11 @@
+h2 Songs
+
+linkTo 'songs.new' tagName='button' | Add Song
+
+ul
+  each
+    li
+      linkTo "song" this
+        = title
+
+== outlet

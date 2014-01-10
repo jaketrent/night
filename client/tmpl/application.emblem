@@ -1,1 +1,14 @@
+nav
+  ul
+    li
+      b: linkTo 'nights' | The Night
+    if session.isAuthenticated
+      li
+        linkTo 'admin' | Admin
+    li
+      if session.isAuthenticated
+        a href="#" click='logout' Logout
+      else
+        a href="#" click='login' Login
+
 == outlet
