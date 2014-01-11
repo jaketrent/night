@@ -1,11 +1,6 @@
 App.SongsNewController = Ember.ObjectController.extend
   actions:
     add: ->
-      song = @store.createRecord 'song',
-        number: @get 'number'
-        title: @get 'title'
-
-      song.save()
+      @get('model').save()
         .then =>
-          @set 'number', ''
-          @set 'title', ''
+          @transitionTo 'song', @get('model')
