@@ -1,0 +1,86 @@
+$admin-summary-width = 300px
+
+.admin-page-title
+  display: inline-block
+  font-size: 30px
+  line-height: 1em
+  text-transform: uppercase
+  margin-bottom: 20px
+
+.admin-section-title
+  display: inline-block
+  font-size: 20px
+  line-height: 1em
+  text-transform: uppercase
+  padding: 0 200px 15px 0
+  border-bottom: 1px solid $blue-light
+  margin-bottom: 20px
+
+.admin-add-btn
+  float: right
+
+.admin-summary-detail
+  overflow: hidden
+
+.admin-summary
+  float: left
+  width: $admin-summary-width
+  padding-right: 50px
+
+.admin-detail
+  float: left
+  width: $body-width - $admin-summary-width
+
+.admin-summary-list
+  reset-list
+  display: block
+
+.admin-summary-item
+  display: block
+  padding: 10px 20px
+
+  &:nth-child(odd)
+    background: $white
+
+    background: $gray-lighter
+
+.admin-summary-link
+  display: block
+  overflow: hidden
+  text-overflow: ellipsis
+  color: $gray
+  text-decoration: none
+  white-space: nowrap
+
+  &:hover
+    text-decoration: underline
+
+.admin-detail-empty-title
+  font-size: 30px
+  line-height: 40px
+  color: $gray-light
+
+.admin-form-group
+  width: 100%
+  max-width: 400px
+
+  label
+    display: block
+    font-weight: bold
+
+  input,
+  textarea,
+  select
+    display: block
+    width: 100%
+    height: $input-height
+    line-height: $input-height
+    font-size: 16px
+    margin-top: 5px
+    margin-bottom: 20px
+    padding: 0 5px
+    border-radius: 3px
+    border: 1px solid $gray-light
+
+
+

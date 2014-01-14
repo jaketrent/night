@@ -1,4 +1,4 @@
 App.SongsRoute = Ember.Route.extend
   model: ->
-    @store.find 'song'
+    @store.findAll 'song'
 

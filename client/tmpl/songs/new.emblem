@@ -1,7 +1,11 @@
-h2 New Song
+h2.admin-section-title New Song
 
 form submit="add"
-  Ember.TextField valueBinding="number" placeholder="Number"
-  Ember.TextField valueBinding="title" placeholder="Title"
+  .admin-form-group
+    label Number
+    Ember.TextField valueBinding="number"
+  .admin-form-group
+    label Title
+    Ember.TextField valueBinding="title"
 
   = input class="btn" type="submit" value="Add"

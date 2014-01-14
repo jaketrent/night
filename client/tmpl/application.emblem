@@ -1,14 +1,21 @@
-nav
-  ul
-    li
+nav.main-nav
+  ul.main-nav-list
+    li.main-nav-item
       b: linkTo 'nights' | The Night
     if session.isAuthenticated
-      li
+      li.main-nav-item
         linkTo 'admin' | Admin
-    li
+    li.main-nav-item
       if session.isAuthenticated
         a href="#" click='logout' Logout
       else
         a href="#" click='login' Login
 
-== outlet
+if session.isAuthenticated
+  nav.admin-nav
+    ul.admin-nav-list
+      li.admin-nav-item
+        linkTo "songs" | Songs
+
+.container.main
+  == outlet
