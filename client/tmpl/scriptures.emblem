@@ -1,0 +1,12 @@
+h2.admin-page-title Scriptures
+
+.admin-summary-detail
+  .admin-summary
+    ul.admin-summary-list
+      each
+        li.admin-summary-item
+          linkTo .admin-summary-link "scripture" this
+            = reference
+  .admin-detail
+    linkTo .btn.btn-primary.admin-add-btn 'scriptures.new' tagName='button' | Add Scripture
+    == outlet

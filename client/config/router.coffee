@@ -7,5 +7,9 @@ App.Router.map ->
     @route 'new'
     @resource 'song', { path: ':id' }
 
+  @resource 'scriptures', { path: '/admin/scriptures' }, ->
+    @route 'new'
+    @resource 'scripture', { path: ':id' }
+
   @route 'login'
   @route 'admin'

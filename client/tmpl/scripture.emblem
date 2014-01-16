@@ -1,0 +1,10 @@
+h2.admin-section-title Edit Scripture
+
+form submit="add"
+  .admin-form-group
+    label Reference
+    Ember.TextField valueBinding="reference"
+
+  button.btn.btn-destroy click="destroy" Delete
+  = linkTo .btn "scriptures" tagName="button" | Cancel
+  input.btn.btn-primary type="submit" value="Save"

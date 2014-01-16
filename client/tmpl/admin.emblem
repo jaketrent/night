@@ -3,4 +3,6 @@ h2.admin-page-title Admin
 ul.admin-summary-list
   li.admin-summary-item
     linkTo .admin-summary-link "songs" | Songs
+  li.admin-summary-item
+    linkTo .admin-summary-link "scriptures" | Scriptures
 

@@ -16,6 +16,7 @@
 #= require_tree ./admin
 #= require_tree ./nights
 #= require_tree ./songs
+#= require_tree ./scriptures
 
 App = Ember.Application.create
   LOG_TRANSITIONS: true

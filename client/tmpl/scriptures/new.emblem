@@ -1,0 +1,9 @@
+h2.admin-section-title New Scripture
+
+form submit="add"
+  .admin-form-group
+    label Reference
+    Ember.TextField valueBinding="reference"
+
+  = linkTo .btn "scriptures" tagName="button" | Cancel
+  input.btn.btn-primary type="submit" value="Add"
