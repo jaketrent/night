@@ -1,7 +1,5 @@
 h2.admin-page-title Songs
 
-linkTo .btn.btn-primary.admin-add-btn 'songs.new' tagName='button' | Add Song
-
 .admin-summary-detail
   .admin-summary
     ul.admin-summary-list
@@ -10,4 +8,5 @@ linkTo .btn.btn-primary.admin-add-btn 'songs.new' tagName='button' | Add Song
           linkTo .admin-summary-link "song" this
             = title
   .admin-detail
+    linkTo .btn.btn-primary.admin-add-btn 'songs.new' tagName='button' | Add Song
     == outlet
