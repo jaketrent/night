@@ -5,4 +5,6 @@ ul.admin-summary-list
     linkTo .admin-summary-link "songs" | Songs
   li.admin-summary-item
     linkTo .admin-summary-link "scriptures" | Scriptures
+  li.admin-summary-item
+    linkTo .admin-summary-link "activities" | Activities
 

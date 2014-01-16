@@ -11,5 +11,9 @@ App.Router.map ->
     @route 'new'
     @resource 'scripture', { path: ':id' }
 
+  @resource 'activities', { path: '/admin/activities' }, ->
+    @route 'new'
+    @resource 'activity', { path: ':id' }
+
   @route 'login'
   @route 'admin'

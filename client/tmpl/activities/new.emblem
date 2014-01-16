@@ -1,0 +1,9 @@
+h2.admin-section-title New Activity
+
+form submit="add"
+  .admin-form-group
+    label Description
+    Ember.TextArea valueBinding="description"
+
+  = linkTo .btn "activities" tagName="button" | Cancel
+  input.btn.btn-primary type="submit" value="Add"

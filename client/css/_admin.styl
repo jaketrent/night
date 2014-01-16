@@ -1,6 +1,7 @@
 $admin-summary-width = 300px
 $admin-summary-link-height = 30px
 
+
 .admin-page-title
   display: inline-block
   margin-bottom: 20px
@@ -81,11 +82,17 @@ $admin-summary-link-height = 30px
     height: $input-height
     line-height: $input-height
     font-size: 16px
-    margin-top: 5px
-    margin-bottom: 20px
+    margin-top: $input-margin-top
+    margin-bottom: $input-margin-bottom
     padding: 0 5px
     border-radius: 3px
     border: 1px solid $gray-light
+
+  $textarea-height-multiplier = 3
+  textarea
+    height: ($input-height * $textarea-height-multiplier) + (($input-margin-top + $input-margin-bottom) * $textarea-height-multiplier - 1)
+
+
 
 
 

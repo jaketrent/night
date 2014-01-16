@@ -18,6 +18,8 @@ if session.isAuthenticated
         linkTo "songs" | Songs
       li.admin-nav-item
         linkTo "scriptures" | Scriptures
+      li.admin-nav-item
+        linkTo "activities" | Activities
 
 .container.main
   == outlet
