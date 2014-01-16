@@ -3,4 +3,4 @@ App.SongsNewController = Ember.ObjectController.extend
     add: ->
       @get('model').save()
         .then =>
-          @transitionTo 'song', @get('model')
+          @transitionToRoute 'song', @get('model')
