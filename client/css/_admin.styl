@@ -1,11 +1,13 @@
 $admin-summary-width = 300px
+$admin-summary-link-height = 30px
 
 .admin-page-title
   display: inline-block
+  margin-bottom: 20px
+  padding-left: 10px
   font-size: 30px
   line-height: 1em
   text-transform: uppercase
-  margin-bottom: 20px
 
 .admin-section-title
   display: inline-block
@@ -37,15 +39,12 @@ $admin-summary-width = 300px
 
 .admin-summary-item
   display: block
-  padding: 10px 20px
-
-  &:nth-child(odd)
-    background: $white
-
-    background: $gray-lighter
 
 .admin-summary-link
   display: block
+  height: $admin-summary-link-height
+  line-height: $admin-summary-link-height
+  padding: 0 10px
   overflow: hidden
   text-overflow: ellipsis
   color: $gray
@@ -54,6 +53,12 @@ $admin-summary-width = 300px
 
   &:hover
     text-decoration: underline
+
+  &.active
+    background: $gray-lighter
+
+    &:hover
+      text-decoration: none
 
 .admin-detail-empty-title
   font-size: 30px

@@ -1,4 +1,6 @@
-h2 Admin
+h2.admin-page-title Admin
 
-linkTo "songs" | Songs
+ul.admin-summary-list
+  li.admin-summary-item
+    linkTo .admin-summary-link "songs" | Songs
 

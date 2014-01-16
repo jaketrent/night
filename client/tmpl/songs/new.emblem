@@ -8,4 +8,5 @@ form submit="add"
     label Title
     Ember.TextField valueBinding="title"
 
-  = input class="btn" type="submit" value="Add"
+  = linkTo .btn "songs" tagName="button" | Cancel
+  input.btn.btn-primary type="submit" value="Add"
