@@ -88,9 +88,12 @@ $admin-summary-link-height = 30px
     border-radius: 3px
     border: 1px solid $gray-light
 
-  $textarea-height-multiplier = 3
   textarea
-    height: ($input-height * $textarea-height-multiplier) + (($input-margin-top + $input-margin-bottom) * $textarea-height-multiplier - 1)
+    height: $input-multiline-height
+
+  select[multiple=true]
+    height: $input-multiline-height
+
 
 
 

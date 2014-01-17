@@ -3,7 +3,7 @@ Ember.Application.initializer
   initialize: (container, application) ->
     Ember.SimpleAuth.setup container, application,
       routeAfterLogin: 'admin'
-      routeAfterLogout: 'nights'
+      routeAfterLogout: 'index'
       loginRoute: 'login'
       serverTokenEndpoint: '/token'
       autoRefreshToken: false

@@ -2,7 +2,12 @@ App.Router.reopen
   location: 'history'
 
 App.Router.map ->
-  @resource 'nights', { path: '/' }
+  @route 'index', { path: '/' }
+
+  @resource 'nights', { path: '/admin/nights' }, ->
+    @route 'new'
+    @resource 'night', { path: ':id'}
+
   @resource 'songs', { path: '/admin/songs' }, ->
     @route 'new'
     @resource 'song', { path: ':id' }

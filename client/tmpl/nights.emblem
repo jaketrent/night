@@ -1,3 +1,12 @@
-each
-  night-card night=this
-== outlet night-detail
+h2.admin-page-title Nights
+
+.admin-summary-detail
+  .admin-summary
+    ul.admin-summary-list
+      each
+        li.admin-summary-item
+          linkTo .admin-summary-link "night" this
+            = subject
+  .admin-detail
+    linkTo .btn.btn-primary.admin-add-btn 'nights.new' tagName='button' | Add Night
+    == outlet

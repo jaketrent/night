@@ -1,0 +1,19 @@
+h2.admin-section-title Edit Night
+
+form submit="save"
+  .admin-form-group
+    label Subject
+    Ember.TextField value=subject
+  .admin-form-group
+    label Songs
+    Ember.Select content=allSongs optionValuePath="content.id" optionLabelPath="content.title" selection=songs value=songs multiple="true"
+  .admin-form-group
+    label Scriptures
+    Ember.Select content=allScriptures optionValuePath="content.id" optionLabelPath="content.reference" selection=scriptures multiple="true"
+  .admin-form-group
+    label Activities
+    Ember.Select content=allActivities optionValuePath="content.id" optionLabelPath="content.description" selection=activities multiple="true"
+
+  button.btn.btn-destroy click="destroy" Delete
+  = linkTo .btn "nights" tagName="button" | Cancel
+  input.btn.btn-primary type="submit" value="Save"
