@@ -1,0 +1,11 @@
+h3 source list
+ul
+  each options itemController="toggle"
+    li
+      Ember.Checkbox checked=isChecked
+      = title
+
+h3 already selected
+ul
+  each selected
+    li= title
