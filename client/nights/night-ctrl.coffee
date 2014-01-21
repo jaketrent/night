@@ -12,3 +12,11 @@ App.NightController = Ember.ObjectController.extend
   allSongs: (->
     @store.findAll 'song'
   ).property()
+
+  allScriptures: (->
+    @store.findAll 'scripture'
+  ).property()
+
+  allActivities: (->
+    @store.findAll 'activity'
+  ).property()

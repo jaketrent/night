@@ -7,15 +7,12 @@ form submit="save"
   .admin-form-group
     label Songs
     Ember.Select multiple="true" class="form-control" selection=songs content=allSongs optionLabelPath="content.title" optionValuePath="content.id"
-
-    /multi-select options=allSongs selected=songs
-    /Ember.Select content=allSongs optionValuePath="content.id" optionLabelPath="content.title" selection=songs value=songs multiple="true"
-  /.admin-form-group
+  .admin-form-group
     label Scriptures
-    Ember.Select content=allScriptures optionValuePath="content.id" optionLabelPath="content.reference" selection=scriptures multiple="true"
-  /.admin-form-group
+    Ember.Select multiple="true" class="form-control" selection=scriptures content=allScriptures optionLabelPath="content.reference" optionValuePath="content.id"
+  .admin-form-group
     label Activities
-    Ember.Select content=allActivities optionValuePath="content.id" optionLabelPath="content.description" selection=activities multiple="true"
+    Ember.Select multiple="true" class="form-control" selection=activities content=allActivities optionLabelPath="content.description" optionValuePath="content.id"
 
   button.btn.btn-destroy click="destroy" Delete
   = linkTo .btn "nights" tagName="button" | Cancel
