@@ -6,7 +6,9 @@ form submit="save"
     Ember.TextField value=subject
   .admin-form-group
     label Songs
-    multi-select options=allSongs selected=songs
+    Ember.Select multiple="true" class="form-control" selection=songs content=allSongs optionLabelPath="content.title" optionValuePath="content.id"
+
+    /multi-select options=allSongs selected=songs
     /Ember.Select content=allSongs optionValuePath="content.id" optionLabelPath="content.title" selection=songs value=songs multiple="true"
   /.admin-form-group
     label Scriptures

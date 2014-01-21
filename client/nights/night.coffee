@@ -1,8 +1,6 @@
 App.Night = DS.Model.extend
   subject: DS.attr 'string'
   songs: DS.hasMany 'song', { async: true }
-  scriptures: DS.hasMany 'scripture', { async: true }
-  activities: DS.hasMany 'activity', { async: true }
 
 App.Night.FIXTURES = [
   {

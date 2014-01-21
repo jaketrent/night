@@ -8,3 +8,7 @@ App.NightController = Ember.ObjectController.extend
           @transitionToRoute 'nights'
     save: ->
       @get('model').save()
+
+  allSongs: (->
+    @store.findAll 'song'
+  ).property()
