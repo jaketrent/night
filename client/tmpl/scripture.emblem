@@ -1,7 +1,7 @@
 h2.admin-section-title Edit Scripture
 
 form submit="add"
-  .admin-form-group
+  .form-group
     label Reference
     Ember.TextField valueBinding="reference"
 

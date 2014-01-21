@@ -1,4 +1,10 @@
-form submit="login"
-  = view Ember.TextField id='identification' valueBinding='identification' placeholder='Enter Login'
-  = view Ember.TextField id='password' type='password' valueBinding='password' placeholder='Enter Password'
-  = input class="btn" type="submit" value="Log In"
+.login
+  form submit="login"
+    .form-group
+      label Username
+      Ember.TextField id='identification' valueBinding='identification'
+    .form-group
+      label Password
+      Ember.TextField id='password' type='password' valueBinding='password'
+    = linkTo .btn "index" tagName="button" | Cancel
+    = input .btn.btn-primary type="submit" value="Log In"

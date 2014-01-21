@@ -1,16 +1,16 @@
 h2.admin-section-title New Night
 
 form submit="add"
-  .admin-form-group
+  .form-group
     label Subject
     Ember.TextField valueBinding="subject"
-  .admin-form-group
+  .form-group
     label Songs
     Ember.Select content=allSongs optionValuePath="content.id" optionLabelPath="content.title" selection=songs multiple="true"
-  .admin-form-group
+  .form-group
     label Scriptures
     Ember.Select content=allScriptures optionValuePath="content.id" optionLabelPath="content.reference" selection=scriptures multiple="true"
-  .admin-form-group
+  .form-group
     label Activities
     Ember.Select content=allActivities optionValuePath="content.id" optionLabelPath="content.description" selection=activities multiple="true"
 

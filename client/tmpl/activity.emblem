@@ -1,7 +1,7 @@
 h2.admin-section-title Edit Activity
 
 form submit="update"
-  .admin-form-group
+  .form-group
     label Description
     Ember.TextArea valueBinding="description"
 

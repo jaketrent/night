@@ -1,10 +1,10 @@
 h2.admin-section-title Edit Song
 
 form submit="add"
-  .admin-form-group
+  .form-group
     label Number
     Ember.TextField valueBinding="number"
-  .admin-form-group
+  .form-group
     label Title
     Ember.TextField valueBinding="title"
 
