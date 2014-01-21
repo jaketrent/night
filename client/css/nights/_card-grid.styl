@@ -26,12 +26,23 @@ card-palette(i)
   colors = #dd4848, #f9b616, #f9e616, #43e43f, #3fbbe4, #913fe4, #e43fbf
   colors[i % length(colors)]
 
-for i in (1..50)
-  .card:nth-of-type({i})
+gen-card-grid(gridMarginLeft, gridMarginTop, cardsPerRow, cardWidth, cardHeight, cardMargin)
+  for i in (1..50)
+    .card:nth-of-type({i})
 
-    &.is-on-table
-      left: $card-grid-margin + (col(i - 1, $cards-per-row) * $card-on-grid-margin) + card-horz-space(i - 1, $card-width, $cards-per-row)
-      top: $card-grid-margin + (row(i - 1, $cards-per-row) * $card-on-grid-margin) + card-vert-space(i - 1, $card-height, $cards-per-row)
+      &.is-on-table
+        left: gridMarginLeft + (col(i - 1, cardsPerRow) * cardMargin) + card-horz-space(i - 1, cardWidth, cardsPerRow)
+        top: gridMarginTop + (row(i - 1, cardsPerRow) * cardMargin) + card-vert-space(i - 1, cardHeight, cardsPerRow)
 
-    .card-back, .card-front
-      background: card-palette(i)
+      .card-back, .card-front
+        background: card-palette(i)
+
+gen-card-grid(20px, 120px, 2, 100px, 100px, 20px)
+
+@media $bp-min-sm
+
+  gen-card-grid(20px, 120px, 3, 150px, 150px, 20px)
+
+@media $bp-min-med
+
+  gen-card-grid(20px, 120px, 4, 200px, 200px, 20px)

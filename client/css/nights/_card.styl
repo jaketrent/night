@@ -1,5 +1,3 @@
-$card-width = 200px
-$card-height = 200px
 $card-border-width = 20px
 
 $card-width-highlighted = 600px
@@ -7,8 +5,6 @@ $card-height-highlighted = 400px
 $card-z-index-highlighted = 100
 
 .card
-  width: $card-width
-  height: $card-height
   position: relative
   perspective: 800px
   transform-origin: 50% 100%
@@ -58,3 +54,18 @@ $card-z-index-highlighted = 100
 .card-back
   background: $gray-dark
   transform: rotateY(180deg)
+
+gen-card(cardWidth, cardHeight)
+  .card
+    width: cardWidth
+    height: cardHeight
+
+gen-card(100px, 100px)
+
+@media $bp-min-sm
+
+  gen-card(150px, 150px)
+
+@media $bp-min-med
+
+  gen-card(200px, 200px)
