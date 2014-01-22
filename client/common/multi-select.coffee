@@ -12,7 +12,7 @@ App.MultiSelectOption = Ember.View.extend
   ).property('content', 'parentView.selection', 'parentView.selection.isFulfilled')
 
   labelPathDidChange: (->
-    labelPath = Ember.get(this, 'parentView.optionLabelPath') # todo: try other syntax
+    labelPath = @get('parentView.optionLabelPath')
     return if not labelPath
 
     Ember.defineProperty(@, 'label', Ember.computed(->
@@ -51,35 +51,42 @@ App.MultiSelect = Ember.View.extend
     content = @get('content')
     selection = @get('selection')
     selectedIndexes = if content then Ember.EnumerableUtils.indexesOf(content, selection) else [-1]
-    options = @$('input[type=checkbox]')
+    $checkboxes = @$('input[type=checkbox]')
 
-    if options
-      options.each ->
-        # todo: what is @index for?? and does this function need bound?
-        adjusted = if @index > -1 then @index else -1  # todo: better name (this is for if prompt offset)
-        @selected = Ember.EnumerableUtils.indexOf(selectedIndexes, adjusted) > -1
+    _setCheckboxesInDom = ->
+      $checkboxes.each (indx) ->
+        @checked = Ember.EnumerableUtils.indexOf(selectedIndexes, indx) > -1
+
+    _setCheckboxesInDom() if $checkboxes
   ).observes 'selection.@each'
 
-  _triggerChange: (->
+  triggerChange: (->
     selection = @get('selection')
     @selectionDidChange() if not Ember.isNone(selection)
 
-    @_change()
+    @domDidChange()
   ).on('didInsertElement')
 
-  _change: (->
-    options = this.$('input[type=checkbox]:checked')
+  domDidChange: (->
+    $checkboxes = @$('input[type=checkbox]')
     content = @get('content')
     selection = @get('selection')
 
     return if not content
 
-    if options
-      selectedIndexes = options.map((indx) -> indx).toArray()
-      newSelection = content.objectsAt selectedIndexes
+    _findNewSelection = ->
+      selectedIndexes = $checkboxes.map((indx, checkbox) ->
+        indx if $(checkbox).is(':checked')
+      ).toArray()
+      content.objectsAt selectedIndexes
 
+    _updateSelection = ->
       if Ember.isArray selection
         Ember.EnumerableUtils.replace selection, 0, Ember.get(selection, 'length'), newSelection
       else
         @set('selection', newSelection)
+
+    if $checkboxes
+      newSelection = _findNewSelection()
+      _updateSelection()
   ).on('change')
