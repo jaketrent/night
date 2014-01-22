@@ -12,8 +12,8 @@ App.MultiSelectOption = Ember.View.extend
 
   # todo: make checked?
   selected: Ember.computed(->
-    content = Ember.get(@, 'content')
-    selection = Ember.get(@, 'parentView.selection')
+    content = @get('content')
+    selection = @get('parentView.selection')
     selection and Ember.EnumerableUtils.indexOf(selection, content.valueOf()) > -1
   # if didn't add isFulfilled, true values were never shown
   ).property('content', 'parentView.selection', 'parentView.selection.isFulfilled')
@@ -23,17 +23,17 @@ App.MultiSelectOption = Ember.View.extend
     return if not labelPath
 
     Ember.defineProperty(@, 'label', Ember.computed(->
-      Ember.get(@, labelPath) # bound to caller or not?
+      @get(labelPath) # bound to caller or not?
     ).property(labelPath))
   )
 
   # todo try other syntax
   valuePathDidChange: Ember.observer('parentView.optionValuePath', ->
-    valuePath = Ember.get(@, 'parentView.optionValuePath')
+    valuePath = @get('parentView.optionValuePath')
     return if not valuePath
 
     Ember.defineProperty(@, 'value', Ember.computed(->
-      Ember.get(@, valuePath)
+      @get(valuePath)
     ).property(valuePath))
   )
 
@@ -57,7 +57,7 @@ App.MultiSelect = Ember.View.extend
     @on('change', @, @_change)
 
   selectionDidChange: Ember.observer('selection.@each', ->
-    selection = Ember.get(@, 'selection') # todo other syntax
+    selection = @get('selection') # todo other syntax
     if not Ember.isArray(selection)
       Ember.set(@, 'selection', Ember.A([selection]))
       return
@@ -66,8 +66,8 @@ App.MultiSelect = Ember.View.extend
 
   # todo: consider consolidating all private "multiple" fns that are needed
   _selectionDidChangeMultiple: ->
-    content = Ember.get(@, 'content') # todo other syntax
-    selection = Ember.get(@, 'selection')
+    content = @get('content') # todo other syntax
+    selection = @get('selection')
     selectedIndexes = if content then Ember.EnumerableUtils.indexesOf(content, selection) else [-1]
     options = @$('input[type=checkbox]')
 
@@ -78,7 +78,7 @@ App.MultiSelect = Ember.View.extend
         @selected = Ember.EnumerableUtils.indexOf(selectedIndexes, adjusted) > -1
 
   _triggerChange: ->
-    selection = Ember.get(@, 'selection') # todo try other syntax
+    selection = @get('selection') # todo try other syntax
     @selectionDidChange() if not Ember.isNone(selection)
 
     @_change()
@@ -89,8 +89,8 @@ App.MultiSelect = Ember.View.extend
 
   _changeMultiple: ->
     options = this.$('input[type=checkbox]:checked')
-    content = Ember.get(@, 'content')
-    selection = Ember.get(@, 'selection')
+    content = @get('content')
+    selection = @get('selection')
 
     return if not content
 
