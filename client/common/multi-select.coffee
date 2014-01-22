@@ -47,11 +47,7 @@ App.MultiSelect = Ember.View.extend
     if not Ember.isArray(selection)
       @set('selection', Ember.A([selection]))
       return
-    @_selectionDidChangeMultiple()
-  ).observes 'selection.@each'
 
-  # todo: consider consolidating all private "multiple" fns that are needed
-  _selectionDidChangeMultiple: ->
     content = @get('content')
     selection = @get('selection')
     selectedIndexes = if content then Ember.EnumerableUtils.indexesOf(content, selection) else [-1]
@@ -62,6 +58,7 @@ App.MultiSelect = Ember.View.extend
         # todo: what is @index for?? and does this function need bound?
         adjusted = if @index > -1 then @index else -1  # todo: better name (this is for if prompt offset)
         @selected = Ember.EnumerableUtils.indexOf(selectedIndexes, adjusted) > -1
+  ).observes 'selection.@each'
 
   _triggerChange: (->
     selection = @get('selection')
@@ -71,11 +68,6 @@ App.MultiSelect = Ember.View.extend
   ).on('didInsertElement')
 
   _change: (->
-    # todo: get rid of this proxy fn
-    @_changeMultiple()
-  ).on('change')
-
-  _changeMultiple: ->
     options = this.$('input[type=checkbox]:checked')
     content = @get('content')
     selection = @get('selection')
@@ -90,3 +82,4 @@ App.MultiSelect = Ember.View.extend
         Ember.EnumerableUtils.replace selection, 0, Ember.get(selection, 'length'), newSelection
       else
         @set('selection', newSelection)
+  ).on('change')
