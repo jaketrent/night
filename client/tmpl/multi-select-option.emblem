@@ -1,0 +1,2 @@
+Ember.Checkbox checked=view.selected value=view.value
+span= view.label

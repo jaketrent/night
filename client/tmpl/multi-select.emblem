@@ -1,0 +1,2 @@
+each view.content
+  view view.optionView content=this
