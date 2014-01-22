@@ -39,6 +39,7 @@ App.MultiSelect = Ember.View.extend
   selection: null
 
   optionLabelPath: 'content'
+  optionValuePath: 'content'
 
   optionView: App.MultiSelectOption
 
