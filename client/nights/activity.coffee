@@ -1,6 +1,12 @@
 App.Activity = DS.Model.extend
   description: DS.attr 'string'
 
+  shortDescription: (->
+    shortLen = 50
+    desc = @get 'description'
+    if desc.length > shortLen then "#{desc.substring(0, shortLen)} ..." else desc
+  ).property 'description'
+
 App.Activity.FIXTURES = [
   {
     id: 1

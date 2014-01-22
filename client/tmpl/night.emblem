@@ -5,14 +5,14 @@ form submit="save"
     label Subject
     Ember.TextField value=subject
   .form-group
-    label Songs Again
+    label Songs
     App.MultiSelect content=allSongs selection=songs optionLabelPath="content.title" optionValuePath="content.id"
   .form-group
     label Scriptures
-    Ember.Select multiple="true" class="form-control" selection=scriptures content=allScriptures optionLabelPath="content.reference" optionValuePath="content.id"
+    App.MultiSelect content=allScriptures selection=scriptures optionLabelPath="content.reference" optionValuePath="content.id"
   .form-group
     label Activities
-    Ember.Select multiple="true" class="form-control" selection=activities content=allActivities optionLabelPath="content.description" optionValuePath="content.id"
+    App.MultiSelect content=allActivities selection=activities optionLabelPath="content.shortDescription" optionValuePath="content.id"
 
   button.btn.btn-destroy click="destroy" Delete
   = linkTo .btn "nights" tagName="button" | Cancel
