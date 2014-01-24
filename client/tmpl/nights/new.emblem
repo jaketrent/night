@@ -14,5 +14,6 @@ form submit="add"
     label Activities
     Ember.Select content=allActivities optionValuePath="content.id" optionLabelPath="content.description" selection=activities multiple="true"
 
-  = linkTo .btn "nights" tagName="button" | Cancel
-  input.btn.btn-primary type="submit" value="Add"
+  .btn-group
+    = linkTo .btn "nights" tagName="button" | Cancel
+    input.btn.btn-primary type="submit" value="Add"

@@ -5,6 +5,7 @@ form submit="update"
     label Description
     Ember.TextArea valueBinding="description"
 
-  button.btn.btn-destroy click="destroy" Delete
-  = linkTo .btn "activities" tagName="button" | Cancel
-  input.btn.btn-primary type="submit" value="Save"
+  .btn-group
+    button.btn.btn-destroy click="destroy" Delete
+    = linkTo .btn "activities" tagName="button" | Cancel
+    input.btn.btn-primary type="submit" value="Save"

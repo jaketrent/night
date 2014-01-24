@@ -8,6 +8,7 @@ form submit="add"
     label Title
     Ember.TextField valueBinding="title"
 
-  button.btn.btn-destroy click="destroy" Delete
-  = linkTo .btn "songs" tagName="button" | Cancel
-  input.btn.btn-primary type="submit" value="Save"
+  .btn-group
+    button.btn.btn-destroy click="destroy" Delete
+    = linkTo .btn "songs" tagName="button" | Cancel
+    input.btn.btn-primary type="submit" value="Save"

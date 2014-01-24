@@ -2,6 +2,8 @@
 .form-group
   width: 100%
   max-width: 400px
+  margin-top: $form-group-margin-top
+  padding-bottom: 1px
 
   label
     display: block
@@ -22,8 +24,12 @@
     border: 1px solid $gray-light
 
   input[type=checkbox]
+    position: relative
+    top: 5px
     display: inline-block
     width: auto
+    margin-top: 0
+    margin-bottom: 0
 
   textarea
     height: $input-multiline-height
@@ -31,6 +37,9 @@
   select[multiple=true]
     height: $input-multiline-height
 
+.btn-group
+  margin-top: $form-group-margin-top
+  padding-bottom: 1px
 
 
 
